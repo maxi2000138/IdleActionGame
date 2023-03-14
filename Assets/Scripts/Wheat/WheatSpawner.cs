@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WheatSpawner : MonoBehaviour
 {
+    private const string _wheatPath = "Prefabs/Wheat/Wheat";
     private GameObject _wheat;
 
     private void Start()
     {
-        _wheat = Resources.Load("Wheat") as GameObject;
+        _wheat = Resources.Load(_wheatPath) as GameObject;
         StartCoroutine(Grow(0f));
     }
 
