@@ -38,7 +38,7 @@ public class SpawnCoinAndMove : MonoBehaviour
         coin.transform.localScale = Vector3.zero;
         Vector3 punchVector = _target.position - coin.transform.position;
         DOTween.Sequence()
-            .Append(coin.transform.DOScale(localScale, _growDuration).SetEase(_scaleEase))
+            .Append(coin.transform.DOScale(localScale/2, _growDuration/2).SetEase(_scaleEase))
             .Append(coin.transform.DOMove(_target.position, _flyDuration).SetEase(_flyEase))
             .AppendCallback(() => addMoney?.Invoke())
             .AppendCallback(returner)
